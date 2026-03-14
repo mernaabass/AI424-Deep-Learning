@@ -1,26 +1,16 @@
-# LSTM from Scratch: Numerical Sequence Prediction
+# LSTM from Scratch: Numerical Example Implementation
 
 **Course Project:** AI424 - Deep Learning  
 **Academic Year:** 2025/2026  
 **Institution:** Faculty of Artificial Intelligence  
-*Developed for the AI424 - Deep Learning course.*
 
 ## 📌 Overview
-This repository contains a complete, from-scratch implementation of a Long Short-Term Memory (LSTM) neural network using only Python and `NumPy`. The objective of this assignment is to demonstrate a deep mathematical understanding of LSTM cells by implementing the forward pass, backpropagation through time (BPTT), and weight updates without relying on high-level deep learning frameworks like TensorFlow or PyTorch.
+This repository contains a Python implementation of the manual LSTM numerical example provided in the course material. The code demonstrates a step-by-step forward pass of an LSTM cell using predefined arbitrary weights.
 
 ## 🎯 Problem Statement
-The network is built and trained to recognize and learn from a simple numerical sequence. Given the input sequence vector `[1, 2, 3]`, the model is expected to learn the underlying pattern and accurately predict the next logical number, which is `[4]`.
+Given a sequential input $X = [1, 2, 3]$ and an evaluation at $t=4$, the objective is to manually compute the values for the Forget gate, Input gate, Candidate cell state, Cell state update, Output gate, and Hidden state at each time step. A final linear transformation ($\hat{y} = W_y h_t + b_y$) is applied to predict the next numerical value in the sequence.
 
 ## ⚙️ Implementation Details
 - **Language:** Python
-- **Dependencies:** `NumPy` (strictly for matrix and vector operations)
-- **Network Architecture:** - Input Size: 1
-  - Hidden State Size: 4 Cells
-  - Output Size: 1
-- **Gates Implemented:** - Forget Gate ($f_t$)
-  - Input Gate ($i_t$)
-  - Candidate Cell State ($\tilde{C}_t$)
-  - Output Gate ($o_t$)
-
-## 🚀 How to Run
-The implementation is divided into logical cells for clarity. Simply run the Jupyter/Colab notebook sequentially. The model will initialize random weights, perform training over 2000 epochs, and output the loss and prediction progress until it converges close to the expected output (4).
+- **Dependencies:** Standard `math` library (No external ML frameworks).
+- **Process:** Iterates through 4 time steps, calculating gate activations using Sigmoid and Tanh functions, updating the hidden ($h_t$) and cell states ($C_t$), and concluding with a final scalar prediction matching the exact mathematical outputs of the assigned PDF (Predicting ~3.8).
