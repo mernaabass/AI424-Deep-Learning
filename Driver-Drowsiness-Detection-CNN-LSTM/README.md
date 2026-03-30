@@ -21,3 +21,19 @@ Detects driver drowsiness from facial image sequences using:
 | **F1-Score**         | 99% |
 
 ## 🛠️ **Tech Stack**
+🔥 PyTorch 2.0+
+📊 Driver Drowsiness Dataset (DDD) - 41,793 images
+💻 Kaggle GPU P100
+## 🎓 **Model Architecture**
+Input: [batch, 3, 16, 224, 224]
+↓
+CNN (4 Layers + MaxPooling)
+↓ [batch, 16, 256]
+LSTM (2 Bidirectional Layers)
+↓ [batch, 256]
+Fully Connected Classifier
+↓ Drowsy / Non-Drowsy (99.23% acc)
+## 🏆 **Why This Model Rocks**
+- ✅ **From scratch** (no pre-trained weights)
+- ✅ **State-of-the-art accuracy** (99.23%)
+- ✅ **Real-world application** (driver safety)
